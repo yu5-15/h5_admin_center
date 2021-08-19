@@ -1,0 +1,182 @@
+<div class="add_main_box">
+  <!-- 面包屑 -->
+  <div class="list_breadcrumb">
+    <div class="list_breadcrumb_off">首页</div>
+    <div class="list_breadcrumb_off">></div>
+    <div class="list_breadcrumb_on">员工管理</div>
+  </div>
+  <!-- 分割线 -->
+  <div class="line_horizontal"></div>
+  <!-- 模块名称 -->
+  <div class="list_module_name">模块名称</div>
+  <!-- 模块描述 -->
+  <div class="list_module_note">模块描述模块描述模块描述模块描述模块描述模块描述模块描述模块描述</div>
+  <!-- 搜索框及新增按钮 -->
+  <div class="add_data_box">
+
+    <div class="row">
+
+      <div class="add_data_item_box_1">
+        <div class="add_txt_title">名称：</div>
+        <el-input class="add_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="add_data_item_box_2">
+        <div class="add_txt_title">名称：</div>
+        <el-input class="add_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+      </div>
+      <div class="add_data_item_box_2">
+        <div class="add_txt_title">日期时间：</div>
+        <!-- <el-input class="add_txt_value" v-model="input" placeholder="请输入内容"></el-input> -->
+        <el-date-picker
+          class="add_txt_value"
+          v-model="date_time_value1"
+          type="datetime"
+          placeholder="选择日期时间">
+        </el-date-picker>
+      </div>
+    </div>
+    <div class="row">
+      <div class="add_data_item_box_2">
+        <div class="add_txt_title">日期：</div>
+        <!-- <el-input class="add_txt_value" v-model="input" placeholder="请输入内容"></el-input> -->
+        <el-date-picker class="add_txt_value"
+                        v-model="date_value1"
+                        type="date"
+                        placeholder="选择日期">
+        </el-date-picker>
+      </div>
+
+      <div class="add_data_item_box_2">
+        <div class="add_txt_title">时间：</div>
+        <!-- <el-input class="add_txt_value" v-model="input" placeholder="请输入内容"></el-input> -->
+        <el-time-picker class="add_txt_value"
+                        v-model="time_value1"
+                        :picker-options="{
+                            selectableRange: '18:30:00 - 20:30:00'
+                            }"
+                        placeholder="任意时间点">
+        </el-time-picker>
+      </div>
+    </div>
+    <div class="row">
+      <div class="add_data_item_box_1">
+        <div class="add_txt_title">审批人姓名：</div>
+        <el-select v-model="value" class="add_txt_value" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="add_data_item_box_1">
+        <div class="add_txt_title">审批人姓名：</div>
+        <div class="add_txt_value">
+          <div class="add_txt_images_box">
+            <div class="add_txt_images_box" v-for="item in mans">
+              <div class="add_other_info_box">
+                <img style="position: absolute;margin-left: 30px;" @click="delete_employe(item.employe_id)"
+                     src="../../../assets/imgs/delete.png" width="16px"
+                     height="16px">
+                <img src="../../../assets/imgs/avatar_default.png" width="40px" height="40px">
+                <span class="add_other_text_on">{{item.employe_name}}</span>
+                <!--                                    <span class="add_other_opt_on">通过</span>-->
+              </div>
+              <div v-if="item.employe_id == mans[mans.length-1].employe_id">
+                <img class="add_other_go" src="../../../assets/imgs/go_off.png" width="30px">
+              </div>
+              <div v-else>
+                <img class="add_other_go" src="../../../assets/imgs/go_on.png" width="30px">
+              </div>
+            </div>
+            <!-- 最后一个 -->
+            <div class="add_other_info_box" @click="openAddMan()">
+              <img src="../../../assets/imgs/avatar_upload.png" width="40px" height="40px">
+              <span class="add_other_text_off">选择审批人</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="add_data_item_box_1">
+        <div class="add_txt_title">附件</div>
+        <el-upload style="margin-top: 10px;"
+                   class="upload-demo"
+                   action=""
+                   :on-preview="handlePreview"
+                   :on-remove="handleRemove"
+                   :before-remove="beforeRemove"
+                   :auto-upload="false"
+                   :on-change="onUploadChange"
+                   multiple
+                   :limit="1"
+                   :on-exceed="handleExceed"
+                   :file-list="fileList">
+          <el-button size="small" type="primary">点击上传</el-button>
+          <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+        </el-upload>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="add_data_item_box_2">
+        <div class="add_txt_title">一级菜单</div>
+        <el-select v-model="menu1_id" placeholder="请选择" class="add_txt_value">
+          <el-option
+            v-for="item in menu1_datas"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </div>
+      <div class="add_data_item_box_2">
+        <div class="add_txt_title">二级菜单</div>
+        <el-select v-model="menu2_id" placeholder="请选择" class="add_txt_value">
+          <el-option
+            v-for="item in menu2_datas"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="add_data_item_box_1" style="margin-top: 10px;">
+        <div class="add_txt_title">菜单管理</div>
+        <el-transfer :titles="['可分配菜单', '已分配菜单']" v-model="ref_menu_value" :data="ref_menu_data" @change="getObject"></el-transfer>
+      </div>
+    </div>
+
+    <div class="line_horizontal" style="margin-top: 50px;"></div>
+    <div class="add_data_btn_box">
+      <el-button type="primary" @click="openPage()">保存</el-button>
+      <el-button>返回</el-button>
+    </div>
+
+  </div>
+
+  <el-dialog title="修改" v-if="dialogTableVisible_up" :visible.sync="dialogTableVisible_up" center :append-to-body='true'
+             :lock-scroll="false" width="70%">
+    <!-- 这里放的是组件控件 -->
+    <update v-on:listenTochildEvent="closeUpdatePage"></update>
+  </el-dialog>
+
+  <el-dialog title="选择审核人" v-if="dialogTableVisible_add" :visible.sync="dialogTableVisible_add" center
+             :append-to-body='true' :lock-scroll="false" width="70%">
+    <!-- 这里放的是组件控件 -->
+    <addMan v-on:listenTochildEvent="closeAddManPage($event)"></addMan>
+  </el-dialog>
+</div>

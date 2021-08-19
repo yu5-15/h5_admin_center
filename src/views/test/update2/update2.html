@@ -1,0 +1,88 @@
+
+
+<div class="add_main_box">
+    <!-- 分割线 -->
+    <div class="line_horizontal"></div>
+    
+    <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tab-pane label="基本信息" name="first">
+        <!-- 搜索框及新增按钮 -->
+        <div class="update_data_box">
+          <div class="row">
+
+            <div class="update_data_item_box_1">
+              <div class="update_txt_title">名称：</div>
+              <el-input class="update_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update_data_item_box_2">
+              <div class="update_txt_title">名称：</div>
+              <el-input class="update_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+            </div>
+            <div class="update_data_item_box_2">
+              <div class="update_txt_title">证书编号：</div>
+              <el-input class="update_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="update_data_item_box_2">
+              <div class="update_txt_title">六个字六个字：</div>
+              <el-input class="update_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="update_data_item_box_1">
+              <div class="update_txt_title">审批人姓名：</div>
+              <el-select v-model="value" class="add_txt_value" placeholder="请选择">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+            </div>
+          </div>
+
+        
+          </div>
+
+      </el-tab-pane>
+      <el-tab-pane label="其他信息1" name="second">
+        <!-- 表格容器 -->
+        <div class="update_data_box">
+          <!-- 真实表格内容  -->
+          <table>
+              <th>id</th>
+              <th>名称</th>
+              <th>年龄</th>
+              <th>状态</th>
+              <th>操作</th>
+              <tbody>
+                  <!-- 拿data的变量进行循环 -->
+                  <tr v-for="item in updateData">
+                      <td style="width: 10%;">{{ item.id }}</td>
+                      <td style="width: 30%;">{{ item.name }}</td>
+                      <td style="width: 15%;">{{ item.age }}</td>
+                      <td style="width: 15%;">{{ item.status }}</td>
+                      <td style="width: 20%;"><div class="updateDataBtnBox">
+                          <el-button @click="tt()">新增</el-button>
+                          </div></td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+      </el-tab-pane>
+      <el-tab-pane label="其他信息2" name="third">角色管理</el-tab-pane>
+      <el-tab-pane label="其他信息3" name="fourth">定时任务补偿</el-tab-pane>
+    </el-tabs>
+
+    <div class="line_horizontal" style="margin-top: 50px;"></div>
+    <div class="update_data_btn_box">
+      <el-button type="primary" @click="closePage()">保存</el-button>
+      <el-button>返回</el-button>
+    </div>
+    
+</div>

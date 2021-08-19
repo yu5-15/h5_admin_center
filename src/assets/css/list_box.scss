@@ -1,0 +1,426 @@
+*{
+font-size: 12px;
+font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+body{
+  overflow:hidden;
+}
+
+.list_breadcrumb{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.list_breadcrumb_off{
+
+    margin-right: 5px;
+    color: #888888;
+
+
+}
+.list_breadcrumb_on{
+    color: #000000;
+}
+
+.line_horizontal{
+    width: 100%;
+    height: 1px;
+    background: #f0f0f0;
+    margin-top: 10px;
+
+}
+.list_module_name{
+    color: #000000;
+    margin-top: 20px;
+}
+.list_module_note{
+    color: #888888;
+    margin-top: 5px;
+}
+
+.list_search_box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 20px;
+}
+
+
+.list_searchInput_box{
+    width: 100%;
+    height: 50px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list_search_input{
+   width: 160px;
+   height: 20px;
+   padding-left: 10px;
+   padding-right: 10px;
+   margin-right: 10px;
+}
+
+
+.list_search_btn_box{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.list_search_box .el-button--primary{
+    // background: #208e4b;
+    padding: 6px 15px 6px 15px;
+
+}
+.record_box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.record_box .el-button--primary{
+  // background: #208e4b;
+  padding: 6px 15px 6px 15px;
+
+}
+
+.list_data_box_p
+{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex: 1;
+  margin-top: 10px;
+}
+.list_data_box_box{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+// 表格
+.list_data_box_box table{
+    width: 100%;
+    border-collapse:collapse;
+  }
+
+  .list_data_box_box table{
+  border: 1px solid #ececec;
+  }
+
+  //结果按钮容器
+  .listDataBtnBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    }
+
+    //结果按钮
+  .listDataBtn{
+    border: 1px solid #ececec;
+    padding: 3px 10px 3px 10px;
+    border-radius: 2px;
+  }
+
+  .listDataBtnBox .el-button{
+    padding: 5px 12px 5px 12px;
+    font-size: 8px;
+  }
+
+.list_data_box_box .el-button{
+  padding: 5px 12px 5px 12px;
+  font-size: 8px;
+}
+
+
+
+
+
+
+
+  //输入框 样式
+  .list_searchInput_box .el-form-item{
+    margin-bottom: 20px;
+  }
+  .list_searchInput_box .el-input{
+    height: 32px;
+    width: 250px;
+
+  }
+  .list_searchInput_box .el-form-item__label{
+    line-height: 32px;
+  }
+  .list_searchInput_box .el-input__inner{
+    height: 32px;
+    font-size: 1px;
+    // width: 100%;
+  }
+  .list_searchInput_box .el-form-item__content{
+    line-height: 32px;
+  }
+  .list_searchInput_box .el-select__caret{
+    line-height: 32px;
+  }
+  .list_searchInput_box .el-select
+  {
+    height: 32px;
+  }
+
+
+
+  //目录树形
+  .list_structure_box .custom-tree-node{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .list_structure_box .custom-tree-node-label{
+    width: 100%;
+    flex: 1;
+  }
+  // .custom-tree-node-btn_box{
+  //   width: 100px;
+  // }
+
+.el-textarea__inner
+{
+  font-size: 12px;
+}
+
+
+
+//弹出层样式
+.pub_dialog {
+  display: flex;
+  justify-content: center;
+  align-items: Center;
+  overflow: hidden;
+  .el-dialog {
+      margin: 0 auto !important;
+      height: 90%;
+      overflow: hidden;
+      .el-dialog__body {
+          position: absolute;
+          left: 0;
+          top: 54px;
+          bottom: 0;
+          right: 0;
+          padding: 0;
+          z-index: 1;
+          overflow: hidden;
+          overflow-y: auto;
+          padding-left: 20px;
+          padding-right: 20px;
+      }
+  }
+}
+
+.pub_dialog .list_data_box_box{
+  padding-right: 0px;
+}
+
+
+.list_data_box_box{
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding-bottom: 20px;
+  box-sizing: border-box;
+
+  overflow-y:auto;
+}
+
+.list_data_box_box .list_data_item_box
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  border:1px solid #ececec;
+  border-radius:5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.list_data_box_box .list_data_item_title_box{
+  width: 100%;
+  height: 30px;
+  background: #fafafa;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  box-sizing: border-box;
+
+  // border:1px solid #000000;
+  border-radius:5px 5px 0px 0px;//左上，右上，右下，右下
+
+
+  border-bottom:1px solid #ececec;
+}
+//列表标题
+.list_data_box_box .t1{
+  color: #000000;
+}
+//列表内容区域
+.list_data_box_box .list_data_item_content_box
+{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.content_left_box
+{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.content_right_box
+{
+  width: 140px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+//列表内部但行内容区域
+.content_row_box{
+  width: 100%;
+  margin-top: 6px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.content_row_box .item_1{
+  color: #888888;
+  font-size: 12px;
+  min-width:50px;
+}
+.content_row_box .item_2{
+  color: #000000;
+  font-size: 12px;
+}
+
+//列表ico按钮区域
+.imgBtnBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+//返回上面btn
+.up_btn {
+  width: 50px;
+  height: 50px;
+}
+
+.list_data_box_p .up_box{
+  height: 100%;
+  width: 100%;
+  margin-right: 100px;
+}
+
+
+.list_main_box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.add_data_btn_box{
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.add_data_btn_box .el-button{
+  // background: #208e4b;
+  padding: 6px 15px 6px 15px;
+
+}
+
+.box_search_item{
+  width: 200px;
+}
+
+.box_search_item_100{
+  width: 100%;
+}
+
+.box_search_item_50{
+  width: 50%;
+}
+
+.list_searchInput_box .el-input{
+ width: 100%;
+}
+.list_searchInput_box .el-select{
+  width: 100%;
+}
+
+
+//滚动条样式，需要依赖于某个容器元素
+.list_data_box_box::-webkit-scrollbar { width: 0 !important }
+.list_data_box_box { -ms-overflow-style: none; }
+.list_data_box_box { overflow: -moz-scrollbars-none; }

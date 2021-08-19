@@ -1,0 +1,179 @@
+<!--审核修改页面-->
+
+<div class="detail_main_box">
+  <!-- 面包屑 -->
+  <div class="list_breadcrumb">
+    <div class="list_breadcrumb_off">首页</div>
+    <div class="list_breadcrumb_off">></div>
+    <div class="list_breadcrumb_on">员工管理</div>
+  </div>
+  <!-- 分割线 -->
+  <div class="line_horizontal"></div>
+  <!-- 模块名称 -->
+  <div class="list_module_name">模块名称</div>
+  <!-- 模块描述 -->
+  <div class="list_module_note">模块描述模块描述模块描述模块描述模块描述模块描述模块描述模块描述</div>
+  <!-- 搜索框及新增按钮 -->
+  <div class="detail_data_box">
+
+    <div class="row">
+
+      <div class="detail_data_item_box_1">
+        <div class="detail_txt_title">名称：</div>
+        <el-input class="detail_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="detail_data_item_box_2">
+        <div class="detail_txt_title">名称：</div>
+        <el-input class="detail_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+      </div>
+      <div class="detail_data_item_box_2">
+        <div class="detail_txt_title">日期时间：</div>
+        <!-- <el-input class="detail_txt_value" v-model="input" placeholder="请输入内容"></el-input> -->
+        <el-date-picker
+          class="detail_txt_value"
+          v-model="date_time_value1"
+          type="datetime"
+          placeholder="选择日期时间">
+        </el-date-picker>
+      </div>
+    </div>
+    <div class="row">
+      <div class="detail_data_item_box_2">
+        <div class="detail_txt_title">日期：</div>
+        <!-- <el-input class="detail_txt_value" v-model="input" placeholder="请输入内容"></el-input> -->
+        <el-date-picker class="detail_txt_value"
+                        v-model="date_value1"
+                        type="date"
+                        placeholder="选择日期">
+        </el-date-picker>
+      </div>
+
+      <div class="detail_data_item_box_2">
+        <div class="detail_txt_title">时间：</div>
+        <!-- <el-input class="detail_txt_value" v-model="input" placeholder="请输入内容"></el-input> -->
+        <el-time-picker class="detail_txt_value"
+                        v-model="time_value1"
+                        :picker-options="{
+                            selectableRange: '18:30:00 - 20:30:00'
+                            }"
+                        placeholder="任意时间点">
+        </el-time-picker>
+      </div>
+    </div>
+    <div class="row">
+      <div class="detail_data_item_box_1">
+        <div class="detail_txt_title">审批人姓名：</div>
+        <el-select v-model="value" class="detail_txt_value" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </div>
+    </div>
+    <!--审核人员显示开始————————————————————————————————————————————————————————————————————-->
+    <div class="row">
+      <div class="detail_data_item_box_1">
+        <div class="detail_txt_title">审批人姓名：</div>
+        <div class="detail_txt_value">
+          <div class="detail_txt_images_box">
+            <div class="detail_txt_images_box" v-for="item in mans">
+              <div class="detail_other_info_box">
+
+                <img src="../../../assets/imgs/avatar_default.png" width="40px" height="40px">
+                <!--审核人名字开始————————————————————————————————-->
+                <!--审核人名:  待他人审核是灰色-->
+                <div v-if="item.status_id == 3">
+                  <span class="detail_other_text_off">{{item.employe_name}}</span>
+                </div>
+                <!--审核人名:  待审核，不通过，已审核是蓝色-->
+                <div v-else>
+                  <span class="detail_other_text_on">{{item.employe_name}}</span>
+                </div>
+                <!--审核人名字结束————————————————————————————————-->
+                <!--状态显示开始——————————————————————————————————-->
+                <!--通过：蓝色————————————————————————————————————-->
+                <div v-if="item.status_id == 1 || item.status_id == 2">
+                  <span class="detail_other_text_on">{{item.status}}</span>
+                </div>
+                <!--不通过：红色————————————————————————-->
+                <div v-if="item.status_id == -2">
+                  <span class="detail_other_opt_off">{{item.status}}</span>
+                </div>
+                <!--待他人审核：灰色————————————————-->
+                <div v-if="item.status_id == 3">
+                  <span class="detail_other_text_off">{{item.status}}</span>
+                </div>
+                <!--状态显示结束——————————————————————————————————-->
+              </div>
+              <!--审核没有通过后面箭头灰色-->
+              <div v-if="item.status_id != 1">
+                <!--如果是最后则没有箭头-->
+                <div v-if="item.employe_id == mans[mans.length-1].employe_id">
+                </div>
+                <!--不是最后显示灰色箭头-->
+                <div v-else>
+                  <img class="detail_other_go" src="../../../assets/imgs/go_off.png" width="30px">
+                </div>
+              </div>
+              <!--已经审核通过或者待审核，蓝色箭头-->
+              <div v-else>
+                <img class="detail_other_go" src="../../../assets/imgs/go_on.png" width="30px">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!--审核人员显示结束————————————————————————————————————————————————————————————————————-->
+
+
+    <div class="row">
+
+      <div class="detail_data_item_box_1">
+        <div class="detail_txt_title">附件</div>
+        <el-upload style="margin-top: 10px;"
+                   class="upload-demo"
+                   action=""
+                   :on-preview="handlePreview"
+                   :on-remove="handleRemove"
+                   :before-remove="beforeRemove"
+                   :auto-upload="false"
+                   :on-change="onUploadChange"
+                   multiple
+                   :limit="1"
+                   :on-exceed="handleExceed"
+                   :file-list="fileList">
+          <el-button size="small" type="primary">点击上传</el-button>
+          <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+        </el-upload>
+      </div>
+    </div>
+
+    <div class="line_horizontal" style="margin-top: 50px;"></div>
+    <div class="detail_data_btn_box">
+      <el-button type="primary" @click="openPage()">保存</el-button>
+      <el-button>返回</el-button>
+    </div>
+
+  </div>
+
+  <el-dialog title="修改" v-if="dialogTableVisible_up" :visible.sync="dialogTableVisible_up" center :append-to-body='true'
+             :lock-scroll="false" width="70%">
+    <!-- 这里放的是组件控件 -->
+    <update v-on:listenTochildEvent="closeUpdatePage"></update>
+  </el-dialog>
+
+  <el-dialog title="选择审核人" v-if="dialogTableVisible_add" :visible.sync="dialogTableVisible_add" center
+             :append-to-body='true' :lock-scroll="false" width="70%">
+    <!-- 这里放的是组件控件 -->
+    <addMan v-on:listenTochildEvent="closeAddManPage($event)"></addMan>
+  </el-dialog>
+</div>

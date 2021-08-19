@@ -1,0 +1,67 @@
+<!-- <div>
+    <h1 class="bb">{{ message }}</h1>
+    <label @click="tt()">OK</label>
+    <el-button type="primary">主要按钮</el-button>
+</div> -->
+
+<div class="list_main_box">
+    <!-- 模块名称 -->
+    <div class="list_module_name">项目列表</div>
+    <!-- 模块描述 -->
+    <div class="list_module_note">模块描述模块描述模块描述模块描述模块描述模块描述模块描述模块描述</div>
+    <!-- 搜索框及新增按钮 -->
+    <div class="list_search_box">
+        <div class="list_searchInput_box">
+            <el-input v-model="input" placeholder="请输入内容"></el-input>
+
+            <el-select v-model="value" placeholder="请选择" style="margin-left: 10px;">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+        </div>
+        <div class="list_search_btn_box">
+            <el-button type="primary" @click="tt()">新增</el-button>
+            <!-- <div class="list_search_newBtn">新增</div> -->
+        </div>
+    </div>
+    <!-- 表格容器 -->
+    <div class="list_data_box">
+        <!-- 真实表格内容  -->
+        <table>
+            <th>id</th>
+            <th>名称</th>
+            <th>年龄</th>
+            <th>状态</th>
+            <th>操作</th>
+            <tbody>
+                <!-- 拿data的变量进行循环 -->
+                <tr v-for="item in listData">
+                    <td style="width: 10%;">{{ item.id }}</td>
+                    <td style="width: 30%;">{{ item.name }}</td>
+                    <td style="width: 15%;">{{ item.age }}</td>
+                    <td style="width: 15%;">{{ item.status }}</td>
+                    <td style="width: 20%;"><div class="listDataBtnBox">
+                        <el-button @click="tt()">新增</el-button>
+                        </div></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- 分页 -->
+        <el-pagination
+            background
+            layout="prev, pager, next"
+            :total="1000">
+        </el-pagination>
+
+    </div>
+
+
+    <el-dialog title="登陆" :visible.sync="dialogTableVisible" center :append-to-body='true' :lock-scroll="false"  width="50%" >
+        <Add v-on:listenTochildEvent="closeUser"></Add>
+      </el-dialog>
+</div>
+

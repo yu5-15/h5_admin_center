@@ -1,0 +1,119 @@
+<!-- <div>
+    <h1 class="bb">{{ message }}</h1>
+    <label @click="tt()">OK</label>
+    <el-button class="button_box"type="primary">主要按钮</el-button>
+</div> -->
+
+<div class="list_main_box">
+  <!-- 面包屑 -->
+  <div class="list_breadcrumb">
+    <div class="list_breadcrumb_off">首页</div>
+    <div class="list_breadcrumb_off">></div>
+    <div class="list_breadcrumb_on">测试页面跳转页面</div>
+  </div>
+  <div class="maxBox">
+    <div class="item_maxBox">
+<!--          <div class="list_search_btn_box">-->
+      <el-button class="button_box" type="primary" @click="tt01()">招聘申请</el-button>
+      <el-button class="button_box" type="primary" @click="tt02()">简历管理</el-button>
+      <el-button class="button_box" type="primary" @click="tt03()">面试(含复试)</el-button>
+      <el-button class="button_box" type="primary" @click="tt04()">招聘信息发布</el-button>
+      <el-button class="button_box" type="primary" @click="tt05()">请假申请</el-button>
+
+      <el-button class="button_box" type="primary" @click="tt06()">薪资汇总</el-button>
+      <el-button class="button_box"type="primary" @click="tt07()">薪资申请(汇总)</el-button>
+      <el-button class="button_box"type="primary" @click="tt08()">社保管理</el-button>
+      <el-button class="button_box"type="primary" @click="tt09()">员工日绩效</el-button>
+      <el-button class="button_box"type="primary" @click="tt10()">员工月绩效</el-button>
+
+      <el-button class="button_box"type="primary" @click="tt11()">员工月绩效确认</el-button>
+      <el-button class="button_box"type="primary" @click="tt12()">员工月绩效申诉</el-button>
+      <el-button class="button_box"type="primary" @click="tt13()">入职通知单</el-button>
+      <el-button class="button_box"type="primary" @click="tt14()">试岗管理</el-button>
+      <el-button class="button_box"type="primary" @click="tt15()">试用管理</el-button>
+    </div>
+    <div class="item_maxBox">
+      <el-button class="button_box"type="primary" @click="tt16()">员工档案</el-button>
+      <el-button class="button_box"type="primary" @click="tt17()">劳动合同</el-button>
+      <el-button class="button_box"type="primary" @click="click()">员工社保</el-button>
+      <el-button class="button_box"type="primary" @click="tt18()">离职管理</el-button>
+      <el-button class="button_box"type="primary" @click="tt19()">员工离职</el-button>
+
+      <el-button class="button_box"type="primary" @click="tt20()">部门培训申请</el-button>
+      <el-button class="button_box"type="primary" @click="tt21()">培训详情</el-button>
+      <el-button class="button_box"type="primary" @click="tt22()">员工列表</el-button>
+      <el-button class="button_box"type="primary" @click="tt23()">岗位调换</el-button>
+      <el-button class="button_box"type="primary" @click="tt24()">违纪举报</el-button>
+
+      <el-button class="button_box"type="primary" @click="tt25()">员工奖励</el-button>
+      <el-button class="button_box"type="primary" @click="tt26()">企业档案</el-button>
+      <el-button class="button_box"type="primary" @click="tt27()">基本信息</el-button>
+      <el-button class="button_box"type="primary" @click="tt28()">项目知悉确认单</el-button>
+      <el-button class="button_box"type="primary" @click="tt29()">图纸内审</el-button>
+    </div>
+    <div class="item_maxBox">
+      <el-button class="button_box"type="primary" @click="tt30()">合同详解会会议纪要</el-button>
+      <el-button class="button_box"type="primary" @click="tt31()">项目标准、质量、安全管理</el-button>
+      <el-button class="button_box"type="primary" @click="tt32()">碰头会会议纪要</el-button>
+      <el-button class="button_box"type="primary" @click="tt33()">项目角色</el-button>
+      <el-button class="button_box"type="primary" @click="tt34()">定库额</el-button>
+
+      <el-button class="button_box"type="primary" @click="tt35()">现场影像资料记录单</el-button>
+      <el-button class="button_box"type="primary" @click="tt36()">设置固定巡查摄像坐标点</el-button>
+      <el-button class="button_box"type="primary" @click="tt37()">现场影响因素解决方案</el-button>
+      <el-button class="button_box"type="primary" @click="tt38()">人机材询价</el-button>
+      <el-button class="button_box"type="primary" @click="tt39()">人员登记备案表</el-button>
+
+      <el-button class="button_box"type="primary" @click="tt40()">机械登记备案表</el-button>
+      <el-button class="button_box"type="primary" @click="tt41()">劳务队伍和劳务人员管理资料</el-button>
+      <el-button class="button_box"type="primary" @click="tt42()">甲方、监理等相关人员通讯录</el-button>
+      <el-button class="button_box"type="primary" @click="tt44()">新进场人、机、材备案登记表</el-button>
+      <el-button class="button_box"type="primary" @click="tt45()">签证</el-button>
+    </div>
+    <div class="item_maxBox">
+      <el-button class="button_box"type="primary" @click="tt46()">施工日志</el-button>
+      <el-button class="button_box"type="primary" @click="tt47()">技术交底</el-button>
+      <el-button class="button_box"type="primary" @click="tt43()">施工任务进度记录</el-button>
+      <el-button class="button_box"type="primary" @click="tt48()">施工作业计划申请表</el-button>
+      <el-button class="button_box"type="primary" @click="tt49()">人、机、材考核评价表</el-button>
+
+
+      <el-button class="button_box"type="primary" @click="tt50()">日常标准巡查确认评价表</el-button>
+      <el-button class="button_box"type="primary" @click="tt51()">工程收量单</el-button>
+      <el-button class="button_box"type="primary" @click="tt52()">质量验收单</el-button>
+      <el-button class="button_box"type="primary" @click="tt53()">工程验收申请单</el-button>
+      <el-button class="button_box"type="primary" @click="tt54()">工程验收报告</el-button>
+
+      <el-button class="button_box"type="primary" @click="tt99()">工程评审征求意见书</el-button>
+      <el-button class="button_box"type="primary" @click="tt100()">竣工验收资料审查表</el-button>
+
+      <el-button class="button_box"type="primary" @click="tt55()">流程类型设置</el-button>
+      <el-button class="button_box"type="primary" @click="tt56()">审批流程设置</el-button>
+      <el-button class="button_box"type="primary" @click="tt57()">项目单位工程</el-button>
+
+    </div>
+
+
+    <div class="item_maxBox">
+
+      <el-button class="button_box"type="primary" @click="tt28()">项目知悉确认单</el-button>
+      <el-button class="button_box"type="primary" @click="tt29()">图纸内审</el-button>
+      <el-button class="button_box"type="primary" @click="aa01()">公司通告表</el-button>
+      <el-button class="button_box"type="primary" @click="aa02()">员工备忘录主表</el-button>
+
+      <el-button class="button_box"type="primary" @click="tt59()">项目三方人员</el-button>
+      <el-button class="button_box"type="primary" @click="tt60()">验收备案表</el-button>
+      <el-button class="button_box"type="primary" @click="tt58()">印章管理</el-button>
+      <el-button class="button_box"type="primary" @click="tt61()">项目部组建</el-button>
+      <el-button class="button_box"type="primary" @click="tt63()">运营部组建</el-button>
+      <el-button class="button_box"type="primary" @click="tt62()">经营目标</el-button>
+      <el-button class="button_box"type="primary" @click="tt64()">前期备案附件</el-button>
+      <el-button class="button_box"type="primary" @click="tt65()">水电气开户</el-button>
+      <el-button class="button_box"type="primary" @click="tt66()">开工备案附件</el-button>
+      <el-button class="button_box"type="primary" @click="tt67()">项目信息详情</el-button>
+      <!-- <div class="list_search_newBtn">新增</div> -->
+          </div>
+    </div>
+  </div>
+</div>
+

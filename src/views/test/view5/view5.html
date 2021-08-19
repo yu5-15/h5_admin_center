@@ -1,0 +1,172 @@
+<!-- <div>
+    <h1 class="bb">{{ message }}</h1>
+    <label @click="tt()">OK</label>
+    <el-button type="primary">主要按钮</el-button>
+</div> -->
+
+<div class="list_main_box">
+    <!-- 面包屑 -->
+    <div class="list_breadcrumb">
+        <div class="list_breadcrumb_on">模块名</div>
+<!--        <div class="list_breadcrumb_off">></div>-->
+<!--        <div class="list_breadcrumb_on">待办事项</div>-->
+    </div>
+    <!-- 分割线 -->
+    <div class="line_horizontal"></div>
+    <!-- 模块名称 -->
+<!--    <div class="list_module_name">待办事项</div>-->
+    <!-- 模块描述 -->
+<!--    <div class="list_module_note">模块描述模块描述模块描述模块描述模块描述模块描述模块描述模块描述</div>-->
+    <!-- 搜索框及新增按钮 -->
+    <div class="list_search_box">
+        <div class="list_searchInput_box">
+            <el-select v-model="value" placeholder="请选择">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+
+            <el-select v-model="value" placeholder="请选择" style="margin-left: 10px;">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+        </div>
+        <div class="list_search_btn_box">
+            <!-- <el-button type="primary" @click="tt()">新增</el-button> -->
+            <!-- <div class="list_search_newBtn">新增</div> -->
+        </div>
+    </div>
+    <!-- 表格容器 -->
+    <div class="list_data_box2">
+        <!-- 真实表格内容  -->
+        <div class="list_data_item_box">
+            <div class="list_data_item_title_box">
+                <span class="t1">项目名称/类型</span>
+            </div>
+            <div class="list_data_item_content_box">
+                <div class="d1_box">
+                    <div class="d1_left_box">
+                        <span class="d1_1">员工名称发起了XXX审批申请</span>
+                        <span class="d1_2">30分钟前</span>
+                    </div>
+
+                  <div class="d1_btn_box_2">
+                    <el-button type="primary">按钮1</el-button>
+                    <el-button type="primary">按钮2</el-button>
+                  </div>
+
+                </div>
+                <div class="d2_box">
+                    <span class="d2_1">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_data_item_box">
+            <div class="list_data_item_title_box">
+                <span class="t1">项目名称/类型</span>
+            </div>
+            <div class="list_data_item_content_box">
+                <div class="d1_box">
+                    <div class="d1_left_box">
+                        <span class="d1_1">员工名称发起了XXX审批申请</span>
+                        <span class="d1_2">30分钟前</span>
+                    </div>
+
+                </div>
+                <div class="d2_box">
+                    <span class="d2_1">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</span>
+                </div>
+              <div class="d1_btn_box_1">
+                <el-button type="primary">按钮1</el-button>
+                <el-button type="primary">按钮2</el-button>
+              </div>
+            </div>
+        </div>
+
+
+
+        <div class="list_data_item_box">
+            <div class="list_data_item_title_box">
+                <span class="t1">项目名称/类型</span>
+            </div>
+            <div class="list_data_item_content_box">
+                <div class="d1_box">
+                    <div class="d1_left_box">
+                        <span class="d1_1">员工名称发起了XXX审批申请</span>
+                        <span class="d1_2">30分钟前</span>
+                    </div>
+                    <el-button type="primary">处理</el-button>
+                </div>
+                <div class="d2_box">
+                    <span class="d2_1">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_data_item_box">
+            <div class="list_data_item_title_box">
+                <span class="t1">项目名称/类型</span>
+            </div>
+            <div class="list_data_item_content_box">
+                <div class="d1_box">
+                    <div class="d1_left_box">
+                        <span class="d1_1">员工名称发起了XXX审批申请</span>
+                        <span class="d1_2">30分钟前</span>
+                    </div>
+                    <el-button type="primary">处理</el-button>
+                </div>
+                <div class="d2_box">
+                    <span class="d2_1">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_data_item_box">
+            <div class="list_data_item_title_box">
+                <span class="t1">项目名称/类型</span>
+            </div>
+            <div class="list_data_item_content_box">
+                <div class="d1_box">
+                    <div class="d1_left_box">
+                        <span class="d1_1">员工名称发起了XXX审批申请</span>
+                        <span class="d1_2">30分钟前</span>
+                    </div>
+                    <el-button type="primary">处理</el-button>
+                </div>
+                <div class="d2_box">
+                    <span class="d2_1">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="list_data_item_box">
+            <div class="list_data_item_title_box">
+                <span class="t1">项目名称/类型</span>
+            </div>
+            <div class="list_data_item_content_box">
+                <div class="d1_box">
+                    <div class="d1_left_box">
+                        <span class="d1_1">员工名称发起了XXX审批申请</span>
+                        <span class="d1_2">30分钟前</span>
+                    </div>
+                    <el-button type="primary">处理</el-button>
+                </div>
+                <div class="d2_box">
+                    <span class="d2_1">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+

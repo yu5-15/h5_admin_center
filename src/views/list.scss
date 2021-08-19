@@ -1,0 +1,169 @@
+*{
+font-size: 12px;
+}
+
+.list_breadcrumb{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.list_breadcrumb_off{
+
+    margin-right: 5px;
+    color: #888888;
+
+
+}
+.list_breadcrumb_on{
+    color: #000000;
+}
+
+.line_horizontal{
+    width: 100%;
+    height: 1px;
+    background: #f0f0f0;
+    margin-top: 10px;
+
+}
+.list_module_name{
+    color: #000000;
+    margin-top: 20px;
+}
+.list_module_note{
+    color: #888888;
+    margin-top: 5px;
+}
+
+.list_search_box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 20px;
+}
+
+// 行样式
+.row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.list_searchInput_box{
+    width: 100%;
+    height: 50px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.list_search_input{
+   width: 160px;
+   height: 20px;
+   padding-left: 10px;
+   padding-right: 10px;
+   margin-right: 10px;
+}
+
+
+.list_search_btn_box{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.el-button--primary{
+    // background: #208e4b;
+    padding: 8px 16px 8px 16px;
+
+}
+
+
+
+.list_data_box{
+    width: 100%;
+    margin-top: 20px;
+}
+
+// 表格
+.list_data_box table{
+    width: 100%;
+    border-collapse:collapse;
+  }
+
+  .list_data_box table{
+  border: 1px solid #ececec;
+  }
+  .list_data_box th{
+    border: 1px solid #ececec;
+    height: 30px;
+    background: #fafafa;
+
+    text-align:center;/** 设置水平方向居中 */
+    vertical-align:middle/** 设置垂直方向居中 */
+
+}
+  .list_data_box td{
+    border: 1px solid #ececec;
+    text-align: center;
+    height: 30px;
+  }
+
+  //结果按钮容器
+  .listDataBtnBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    }
+
+    //结果按钮
+  .listDataBtn{
+    border: 1px solid #ececec;
+    padding: 3px 10px 3px 10px;
+    border-radius: 2px;
+  }
+
+  .listDataBtnBox [class^='el-button']{
+    padding: 4px 12px 4px 12px;
+    font-size: 8px;
+}
+
+  //分页
+  .el-pagination
+  {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .el-pagination.is-background .el-pager li:not(.disabled).active{
+    background-color:#007bff;
+  }
+
+
+
+  //输入框 样式
+  .list_searchInput_box .el-form-item{
+    margin-bottom: 20px;
+  }
+  .list_searchInput_box .el-input{
+    width: 200px;
+  }
+  .list_searchInput_box .el-form-item__label{
+    line-height: 32px;
+  }
+  .list_searchInput_box .el-input__inner{
+    height: 32px;
+    font-size: 13px;
+  }
+  .list_searchInput_box .el-form-item__content,.list_searchInput_box .el-select__caret{
+    line-height: 32px;
+  }
+

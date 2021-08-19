@@ -1,0 +1,382 @@
+.bb{
+  color: red;
+}
+*{
+  font-size: 12px;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+
+.list_breadcrumb{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.list_breadcrumb_off{
+
+  margin-right: 5px;
+  color: #888888;
+
+
+}
+.list_breadcrumb_on{
+  color: #000000;
+}
+
+
+.list_module_name{
+  color: #000000;
+  margin-top: 20px;
+}
+.list_module_note{
+  color: #888888;
+  margin-top: 5px;
+}
+
+//弹出层样式 BEGIN------------------
+.pub_dialog .el-dialog {
+  margin: 0 auto !important;
+  height: 90%;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.el-dialog__body
+{
+  display: flex;
+  box-sizing: border-box;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+//弹出层样式 END------------------
+
+.add_main_box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+//主体容器
+.add_data_box{
+  width: 100%;
+  //height: 100%;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+
+}
+
+
+
+// 行样式
+.row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.detail_txt_value{
+  width: 100%;
+  flex: 1;
+}
+
+// 1个item占整行
+.add_data_item_box_1{
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+
+}
+//item占半行
+.add_data_item_box_2{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.add_txt_title{
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  color: #000000;
+}
+.add_txt_value{
+  flex: 1;
+}
+// 审批人头像开始
+.add_txt_images_box{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #888888;
+
+}
+.add_txt_images_line{
+  width: 30px;
+  height: 2px;
+  background: #888888;
+
+}
+.add_other_info_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.add_other_text_on{
+  color: #3997ef;
+}
+.add_other_text_off{
+  color: #888888;
+}
+.add_other_go{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.add_other_opt_on{
+  color: #3997ef;
+}
+.add_other_opt_off{
+  color: #d81e06;
+}
+// 审批人头像结束
+
+
+.add_data_btn_box
+{
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 50px;
+  min-height: 50px;
+}
+.add_data_btn_box .btn_ok_box{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.add_data_btn_box .el-button{
+  padding: 8px 16px 8px 16px;
+  font-size: 8px;
+}
+.add_data_box .el-button{
+  padding: 8px 16px 8px 16px;
+  font-size: 8px;
+}
+
+.el-select
+{
+  width: 100%;
+  height: 36px;
+  font-size: 12px;
+
+}
+
+// 线样式
+.line_horizontal{
+  width: 100%;
+  height: 1px;
+  background: #f0f0f0;
+  margin-top: 10px;
+
+}
+
+.line_vertical{
+  height: 100%;
+  width: 1px;
+  background: #f0f0f0;
+}
+
+
+// 上传样式
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.add_data_item_box_1 [class^='el-button']{
+  height: 30px;
+  font-size: 12px;
+  padding: 8px 16px 8px 16px;
+}
+
+//输入框样式
+.add_main_box .el-input__inner{
+  height: 35px;
+  line-height: 35px;
+  width: 100%;
+  font-size: 12px;
+}
+.add_main_box .el-input__icon{
+  height: 35px;
+  line-height: 35px;
+}
+
+//第一个不做样式处理
+.add_txt_file_1
+{
+  color: #3997ef;
+}
+//第二个做间距处理
+.add_txt_file_2
+{
+  color: #3997ef;
+  margin-top: 2px;
+}
+//审核人头像
+.add_other_info_popover_box{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+//审核人头像
+.add_other_info_popover_item{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+//审核人头像
+.add_other_info_popover_line{
+  width: 100%;
+  height: 1px;
+  background: #f0f0f0;
+
+
+}
+
+.el-textarea__inner
+{
+  font-size: 12px;
+}
+
+
+//图标的+剧中
+.avatar-uploader [class*=" el-icon-"] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-uploader [class^=el-icon-] {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+//紧前样式
+.add_data_item_rightBox [class^='el-button'] {
+  padding: 0px 0px 0px 0px;
+  height: auto;
+}
+
+.add_data_item_rightBox{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  flex: 1;
+}
+.add_data_item_labelBox{
+  width: 100%;
+  height: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+.labelFlag{
+  width: 2px;
+  height: 100%;
+  background: #000000;
+}
+.labelText{
+  font-size: 13px;
+  color: #000000;
+}
+
+
+
+//内容父容器
+.add_data_box_p
+{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex: 1;
+  margin-top: 10px;
+}
+
+//滚动条样式，需要依赖于某个容器元素
+.add_data_box::-webkit-scrollbar { width: 0 !important }
+.add_data_box { -ms-overflow-style: none; }
+.add_data_box { overflow: -moz-scrollbars-none; }

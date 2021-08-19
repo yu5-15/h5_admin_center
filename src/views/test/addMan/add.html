@@ -1,0 +1,41 @@
+
+
+<div class="add_main_box">
+    <!-- 面包屑 -->
+<!--    <div class="list_breadcrumb">-->
+<!--        <div class="list_breadcrumb_off">首页</div>-->
+<!--        <div class="list_breadcrumb_off">></div>-->
+<!--        <div class="list_breadcrumb_on">员工管理</div>-->
+<!--    </div>-->
+    <!-- 分割线 -->
+<!--    <div class="line_horizontal"></div>-->
+    <!-- 模块名称 -->
+    <div class="list_module_name">选择审核人</div>
+    <!-- 模块描述 -->
+<!--    <div class="list_module_note">模块描述模块描述模块描述模块描述模块描述模块描述模块描述模块描述</div>-->
+    <!-- 搜索框及新增按钮 -->
+    <div class="add_data_box">
+                <div class="row">
+
+                <div class="add_data_item_box_1">
+                    <div class="add_txt_title">审批人:</div>
+                    <el-select v-model="value" class="txt_value" placeholder="请选择">
+                        <el-option
+                          v-for="item in options"
+                          :key="item.value"
+                          :label="item.label"
+                          :value="item.value">
+                        </el-option>
+                      </el-select>
+                </div>
+                </div>
+
+                <div class="line_horizontal" style="margin-top: 50px;"></div>
+                <div class="add_data_btn_box">
+                    <el-button type="primary" @click="add_employe()">保存</el-button>
+                    <el-button @click="add_return()">返回</el-button>
+
+                </div>
+
+    </div>
+</div>

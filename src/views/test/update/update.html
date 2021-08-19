@@ -1,0 +1,112 @@
+
+
+<div class="add_main_box">
+    <!-- 面包屑 -->
+    <div class="list_breadcrumb">
+        <div class="list_breadcrumb_off">首页</div>
+        <div class="list_breadcrumb_off">></div>
+        <div class="list_breadcrumb_on">员工管理</div>
+    </div>
+    <!-- 分割线 -->
+    <div class="line_horizontal"></div>
+    <!-- 模块名称 -->
+    <div class="list_module_name">模块名称</div>
+    <!-- 模块描述 -->
+    <div class="list_module_note">模块描述模块描述模块描述模块描述模块描述模块描述模块描述模块描述</div>
+   
+   <div class="update_title_box">
+        <div class="update_title_item_box">
+            <div class="title_select_on">基本信息</div>
+            <div class="title_line"></div>
+        </div>
+        <div class="update_title_item_box" @click="toOtherPage()">
+            <div class="title_select_off">其他信息</div>
+            <!-- <div class="title_line"></div> -->
+        </div>
+   </div>
+   <div class="update_title_line"></div>
+    <!-- 搜索框及新增按钮 -->
+    <div class="update_data_box">
+      <div class="row">
+
+        <div class="update_data_item_box_1">
+          <div class="update_txt_title">名称：</div>
+          <el-input class="update_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="update_data_item_box_2">
+          <div class="update_txt_title">名称：</div>
+          <el-input class="update_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+        </div>
+        <div class="update_data_item_box_2">
+          <div class="update_txt_title">证书编号：</div>
+          <el-input class="update_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="update_data_item_box_2">
+          <div class="update_txt_title">六个字六个字：</div>
+          <el-input class="update_txt_value" v-model="input" placeholder="请输入内容"></el-input>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="update_data_item_box_1">
+          <div class="update_txt_title">审批人姓名：</div>
+          <el-select v-model="value" class="add_txt_value" placeholder="请选择">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </div>
+      </div>
+
+      <div class="line_horizontal" style="margin-top: 50px;"></div>
+      <div class="update_data_btn_box">
+        <el-button type="primary" @click="closePage()">保存</el-button>
+        <el-button>返回</el-button>
+
+      </div>
+
+
+
+<!--       <div>-->
+<!--         -->
+<!--       </div>-->
+<!--                <div class="update_data_item_box">-->
+<!--                    <div class="txt_title">名称：</div>-->
+<!--                    <el-input class="txt_value" v-model="input" placeholder="请输入内容"></el-input>-->
+<!--                </div>-->
+<!--                <div class="update_data_item_box">-->
+<!--                    <div class="txt_title">名称：</div>-->
+<!--                    <el-input class="txt_value" v-model="input" placeholder="请输入内容"></el-input>-->
+<!--                </div>-->
+<!--                <div class="update_data_item_box">-->
+<!--                    <div class="txt_title">名称：</div>-->
+<!--                    <el-input class="txt_value" v-model="input" placeholder="请输入内容"></el-input>-->
+<!--                </div>-->
+<!--                <div class="update_data_item_box">-->
+<!--                    <div class="txt_title">名称：</div>-->
+<!--                    <el-select v-model="value" placeholder="请选择">-->
+<!--                        <el-option-->
+<!--                          v-for="item in options"-->
+<!--                          :key="item.value"-->
+<!--                          :label="item.label"-->
+<!--                          :value="item.value">-->
+<!--                        </el-option>-->
+<!--                      </el-select>-->
+<!--                </div>-->
+
+<!--                <div class="line_horizontal" style="margin-top: 50px;"></div>-->
+<!--                <div class="update_data_btn_box">-->
+<!--                    <el-button type="primary" @click="closePage()">保存</el-button>-->
+<!--                    <el-button>返回</el-button>-->
+
+<!--                </div>-->
+    
+    </div>
+</div>

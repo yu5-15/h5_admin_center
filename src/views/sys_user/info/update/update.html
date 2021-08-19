@@ -1,0 +1,63 @@
+<!--单位工程新增 -->
+<div class="update_main_box">
+  <!-- 分割线 -->
+  <div class="line_horizontal" style="margin-bottom: 10px;"></div>
+
+  <!-- 项目立项 -->
+  <div class="update_data_box_p">
+    <div class="update_data_box">
+      <div style="width: 100%;">
+        <!-- 内容区域 -->
+        <div class="row">
+          <div class="update_data_item_box_2">
+            <div class="update_txt_title">用户ID：</div>
+            <el-input class="update_txt_value" v-model="loadView.id" disabled placeholder="请输入内容"></el-input>
+          </div>
+
+          <div class="update_data_item_box_2">
+            <div class="update_txt_title">用户名称：</div>
+            <el-input class="update_txt_value" v-model="loadView.name" placeholder="请输入内容"></el-input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="update_data_item_box_2">
+            <div class="update_txt_title">手机号码：</div>
+            <el-input class="update_txt_value" v-model="loadView.mobile" placeholder="请输入内容"></el-input>
+          </div>
+          <div class="update_data_item_box_2">
+            <div class="update_txt_title">用户类型：</div>
+            <el-select v-model="loadView.type" placeholder="请选择" class="update_txt_value">
+              <el-option
+                v-for="item in type_datas"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="update_data_item_box_2">
+            <div class="update_txt_title">账号状态：</div>
+            <el-radio-group v-model="loadView.status_id" class="update_txt_value">
+              <el-radio :label="item.value" :key="item.value" v-for="item in status_datas">{{item.label}}</el-radio>
+            </el-radio-group>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 内容区域结束   -->
+  <div class="update_data_btn_box">
+    <div class="btn_ok_box">
+      <el-button type="primary" @click="update()">保存</el-button>
+    </div>
+    <el-button @click="closePage()">返回</el-button>
+  </div>
+
+</div>
+

@@ -1,0 +1,86 @@
+
+
+<div class="list_main_box">
+    <!-- 面包屑 -->
+    <div class="list_breadcrumb">
+        <div class="list_breadcrumb_off">首页</div>
+        <div class="list_breadcrumb_off">></div>
+        <div class="list_breadcrumb_on">员工管理</div>
+    </div>
+    <!-- 分割线 -->
+    <div class="line_horizontal"></div>
+    <!-- 模块名称 -->
+    <div class="list_module_name">模块名称</div>
+    <!-- 模块描述 -->
+    <div class="list_module_note">模块描述模块描述模块描述模块描述模块描述模块描述模块描述模块描述</div>
+    <!-- 搜索框及新增按钮 -->
+    <div class="list_structure_box">
+        <div class="list_structure_box_left">
+            <div class="left_title">项目分类</div>
+            <div class="line_horizontal" style="margin-top: 10px;margin-bottom: 20px;"></div>
+            <div class="left_data_box">
+                <el-tree
+                    :data="levelData"
+                    node-key="id"
+                    :default-expanded-keys="expandedKeys"
+                    :expand-on-click-node="false">
+                    <span class="custom-tree-node" slot-scope="{ node, data }">
+                        <span @click="() => levelClick(data)">{{ node.label }}</span>
+                        <span class="custom-tree-node-btn_box">
+                        <el-button style="padding: 0;"
+                            type="text"
+                            size="mini"
+                            @click="() => levelAppend(data)">
+                            新增
+                        </el-button>
+                        <el-button style="padding: 0;"
+                            type="text"
+                            size="mini"
+                            @click="() => levelRemove(node, data)">
+                            删除
+                        </el-button>
+                        </span>
+                    </span>
+                    </el-tree>
+            </div>
+
+        </div>
+        <div class="line_vertical" style="margin-left: 10px; margin-right: 10px;"></div>
+        <div class="list_structure_box_right">
+            <div class="right_title">项目分类</div>
+            <div class="line_horizontal" style="margin-top: 10px;margin-bottom: 20px;"></div>
+            <div class="optBox">
+                <el-input v-model="input" placeholder="请输入员工名称"></el-input>
+                <el-button type="primary">新增</el-button>
+            </div>
+            <div class="list_data_box">
+                <table>
+                    <th>id</th>
+                    <th>名称</th>
+                    <th>年龄</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                    <tbody>
+                        <!-- 拿data的变量进行循环 -->
+                        <tr v-for="item in listData">
+                            <td style="width: 10%;">{{ item.id }}</td>
+                            <td style="width: 30%;">{{ item.name }}</td>
+                            <td style="width: 15%;">{{ item.age }}</td>
+                            <td style="width: 15%;">{{ item.status }}</td>
+                            <td style="width: 20%;"><div class="listDataBtnBox">
+                                <el-button @click="tt()">新增</el-button>
+                                </div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- 分页 -->
+                <el-pagination
+                background
+                layout="prev, pager, next"
+                :total="1000">
+            </el-pagination>
+            </div>
+            
+        </div>
+    </div>
+</div>

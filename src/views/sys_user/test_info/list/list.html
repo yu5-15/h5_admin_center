@@ -1,0 +1,128 @@
+<!--    <el-button type="primary">用户列表</el-button>-->
+<div class="list_main_box">
+  <!-- 面包屑 -->
+  <div class="list_breadcrumb">
+    <div class="list_breadcrumb_on">权限管理</div>
+    <div class="list_breadcrumb_on">&nbsp;&nbsp;/&nbsp;&nbsp;</div>
+    <div class="list_breadcrumb_on">用户管理</div>
+  </div>
+  <!-- 分割线 -->
+  <div class="line_horizontal"></div>
+  <!-- 模块名称 -->
+  <div class="list_module_name">用户管理</div>
+  <!-- 模块描述 -->
+  <!-- 搜索框及新增按钮 -->
+  <div class="list_search_box">
+
+    <div class="list_searchInput_box">
+      <el-button type="primary" @click="add()">新建用户</el-button>
+      <!-- <div class="list_search_newBtn">新增</div> -->
+    </div>
+    <div class="row"></div>
+  </div>
+  <div class="list_search_box">
+
+    <div class="list_searchInput_box">
+      <div class="row">
+        <div style="white-space: nowrap">名称：</div>
+        <el-input class="list_search_input" v-model="seach_value" placeholder="请输入"></el-input>
+      </div>
+      <!-- 下拉框 -->
+      <div class="row">
+        <div style="margin-left: 20px;white-space: nowrap">状态：</div>
+        <el-select v-model="selected_value" placeholder="请选择" style="margin-left: 10px;">
+          <el-option
+            v-for="item in select_data"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
+      </div>
+      <div class="row">
+        <el-button type="primary" style="margin-left: 20px" @click="search()">搜索</el-button>
+        <el-button type="primary" @click="reset()">重置</el-button>
+      </div>
+    </div>
+  </div>
+  <!-- 表格容器 -->
+  <div class="list_data_box">
+    <!-- 真实表格内容  -->
+    <table>
+      <th>序号</th>
+      <th>账号</th>
+      <th>类型</th>
+      <th>电话</th>
+      <th>创建时间</th>
+      <th>状态</th>
+      <th>操作</th>
+      <tbody>
+      <!-- 拿data的变量进行循环 -->
+      <tr v-for="item in listData">
+        <td style="width: 5%;">
+          <el-link :underline="false" @click="detail(item.id)">{{ item.id }}</el-link>
+        </td>
+        <td style="width: 10%;">
+          <el-link :underline="false" @click="detail(item.id)">{{ item.name }}</el-link>
+        </td>
+        <td style="width: 15%;">
+          <el-link :underline="false" @click="detail(item.id)">{{ item.type }}</el-link>
+        </td>
+        <td style="width: 15%;">
+          <el-link :underline="false" @click="detail(item.id)">{{ item.mobile }}</el-link>
+        </td>
+        <td style="width: 15%;">
+          <el-link :underline="false" @click="detail(item.id)">{{ item.create_at }}</el-link>
+        </td>
+        <td style="width: 15%;">
+          <el-link :underline="false" @click="detail(item.id)">{{ item.status }}</el-link>
+        </td>
+        <td style="width: 10%;">
+          <div class="listDataBtnBox">
+            <el-link :underline="true" type="primary" @click="update(item.id)">编辑</el-link>
+            <!--            <el-button @click="del_info(item.id)">编辑</el-button>-->
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <!-- 分页 -->
+
+    <template>
+      <div class="block">
+        <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="currentPage"
+          :page-sizes="[10, 5, 15, 20]"
+          :page-size="1"
+          layout="total, prev, pager, next, sizes, jumper"
+          :total="total">
+        </el-pagination>
+      </div>
+    </template>
+
+  </div>
+  <!--  弹出框-->
+  <el-dialog class="pub_dialog" title="后台用户-修改" v-if="dialogTableVisible_up" :visible.sync="dialogTableVisible_up"
+             center
+             :append-to-body='true' :lock-scroll="false" width="70%">
+    <!-- 这里放的是组件控件 -->
+    <update :sys_user_id="sys_user_id" v-on:listenTochildEvent="closeUpdatePage"></update>
+  </el-dialog>
+  <!--  弹出框-->
+  <el-dialog class="pub_dialog" title="后台用户-新增" v-if="dialogTableVisible_ad" :visible.sync="dialogTableVisible_ad"
+             center
+             :append-to-body='true' :lock-scroll="false" width="70%">
+    <!-- 这里放的是组件控件 -->
+    <add v-on:listenTochildEvent="closeAddPage"></add>
+  </el-dialog>
+  <!--  弹出框-->
+  <el-dialog class="pub_dialog" title="后台用户-详情" v-if="dialogTableVisible_de" :visible.sync="dialogTableVisible_de"
+             center
+             :append-to-body='true' :lock-scroll="false" width="70%">
+    <!-- 这里放的是组件控件 -->
+    <detail :sys_user_id="sys_user_id" v-on:listenTochildEvent="closeDetailPage"></detail>
+  </el-dialog>
+</div>
+
